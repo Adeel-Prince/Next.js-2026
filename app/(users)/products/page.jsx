@@ -1,0 +1,19 @@
+import ProductList from "./productList";
+
+const Products = async({searchParams}) =>{
+    // const searchParams = await props.searchParams;
+    const searchParam = await searchParams;
+    console.log("outer ",searchParam);
+
+    const category = searchParam?.category || "all";
+    const sort = searchParam?.sort || "deafult";
+    const page = searchParam?.page || 1;
+    return (
+        <div>
+            <ProductList></ProductList>
+            Showing: {category} products, sorted by {sort}, page {page}
+        </div>
+    );
+};
+
+export default Products;
