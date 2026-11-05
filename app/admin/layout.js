@@ -1,10 +1,8 @@
 import "../globals.css";
-export default function RootLayout({children}){
-  return(
+export default function RootLayout({ children }) {
+  return (
     <html>
-      <body>
-        {children}
-        </body>
+      <body>{children}</body>
     </html>
   );
 }
