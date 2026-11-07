@@ -1,15 +1,14 @@
 import { db } from "../../../config/db.jsx";
 const StaticPage = async () => {
-  const [doctors] = await db.execute("select * from doctors");
-  console.log(doctors);
+  const [Doctors] = await db.execute("select * from Doctors");
+  console.log(Doctors);
 
   return (
     <>
       <ul>
-        {doctors.map((doctor) => {
-          return <li key={doctor.doctor_id}> {doctor.first_name}</li>;
+        {Doctors.map((doctor) => {
+          return <li key={doctor.DoctorID}> {doctor.FirstName}</li>;
         })}
-        ;
       </ul>
     </>
   );
