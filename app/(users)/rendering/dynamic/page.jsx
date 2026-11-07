@@ -29,6 +29,6 @@ const DoctorLists = async () => {
 
 const getAllDoctors = cache(async () => {
   const [Doctors] = await db.execute("select * from doctors");
-  console.log("Fetching doctors");
+  // console.log("Fetching doctors");
   return Doctors;
 });

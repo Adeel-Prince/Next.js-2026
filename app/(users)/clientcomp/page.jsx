@@ -1,5 +1,6 @@
 "use client";
-const clientcomp = () => {
+
+const ClientComp = () => {
   return (
     <>
       <h1>Client Comp</h1>
@@ -13,4 +14,4 @@ const clientcomp = () => {
   );
 };
 
-export default clientcomp();
+export default ClientComp;

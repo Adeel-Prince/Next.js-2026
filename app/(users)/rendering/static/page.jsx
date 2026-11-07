@@ -3,7 +3,7 @@ export const revalidate = 10; //if you want to make the page dynamic then use th
 
 const StaticPage = async () => {
   const [Doctors] = await db.execute("select * from Doctors");
-  console.log("Static doctors");
+  // console.log("Static doctors");
 
   return (
     <>

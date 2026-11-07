@@ -1,5 +1,13 @@
 import { db } from "../../../config/db.jsx";
-import { Mail, Phone, MapPin, Calendar, Award, User } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  Award,
+  User,
+  GraduationCap,
+} from "lucide-react";
 import { notFound } from "next/navigation";
 
 // Return a list of `params` to populate the [slug] dynamic segment
@@ -17,13 +25,13 @@ export async function generateStaticParams() {
 
 const SingleDoctor = async (props) => {
   const params = await props.params;
-  console.log("prams: ", params);
+  // console.log("prams: ", params);
 
   const [[Doctors]] = await db.execute(
     `select * from Doctors where DoctorID = ?`,
     [params.id],
   );
-  console.log("🚀 ~ SingleDoctor ~ doctor:", Doctors);
+  // console.log("🚀 ~ SingleDoctor ~ doctor:", Doctors);
 
   //   const formatDate = (dateString) => {
   //     return new Date(dateString).toLocaleDateString("en-US", {
@@ -47,7 +55,7 @@ const SingleDoctor = async (props) => {
         {/* Header with gradient */}
         <div className="bg-linear-to-r from-blue-600 to-purple-600 p-6 text-white">
           <div className="flex items-center space-x-4">
-            <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-xl font-bold">
+            <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-xl font-bold text-gray-500">
               {getInitials(Doctors.FirstName, Doctors.LastName)}
             </div>
             <div>
@@ -58,11 +66,11 @@ const SingleDoctor = async (props) => {
               <div className="flex items-center mt-1">
                 <div
                   className={`w-2 h-2 rounded-full mr-2 ${
-                    Doctors.is_active ? "bg-green-300" : "bg-red-300"
+                    Doctors.Status === "Active" ? "bg-green-300" : "bg-red-400"
                   }`}
                 ></div>
                 <span className="text-xs">
-                  {Doctors.is_active ? "Active" : "Inactive"}
+                  {Doctors.Status === "Active" ? "Active" : "Inactive"}
                 </span>
               </div>
             </div>
@@ -85,9 +93,13 @@ const SingleDoctor = async (props) => {
               <MapPin className="w-4 h-4 text-red-500 mt-0.5" />
               <div className="text-sm">
                 <div>{Doctors.Address}</div>
-                <div>
-                  {Doctors.City}, {Doctors.Qualification}
-                </div>
+                <div>{Doctors.City}</div>
+              </div>
+            </div>
+            <div className="flex items-start space-x-3 text-gray-600">
+              <GraduationCap className="w-4 h-4 text-red-500 mt-0.5" />
+              <div className="text-sm">
+                <div>{Doctors.Qualification}</div>
               </div>
             </div>
           </div>
