@@ -2,7 +2,7 @@ import { User, Users, Star, TrendingUp } from "lucide-react";
 
 const DataCard = async ({ userName }) => {
   const res = await fetch(
-    `https://api.genderize.io?name=${userName}&apikey=cf824884caf8a39b1bcb84a5b2392734`,
+    `https://api.genderize.io?name=${userName}&apikey=""`, //Enter your api here!
   );
   const userData = await res.json();
   console.log(userData);
