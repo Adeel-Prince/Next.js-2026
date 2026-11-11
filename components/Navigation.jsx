@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export default function Navigation() {
   return (
-    <header className="grid grid-cols-2 font-work mt-5">
-      <div className="">Adeel</div>
+    <header className="flex items-center justify-between px-8 py-4 bg-zinc-900 text-white border-b border-zinc-800">
+      <div className="font-bold text-xl">Adeel</div>
       <nav>
-        <ul className="flex gap-4">
+        <ul className="flex gap-6 text-sm font-medium text-white">
           <li>
             <Link href="/">Home</Link>
           </li>
@@ -16,7 +16,10 @@ export default function Navigation() {
             <Link href="/signup">SignUp</Link>
           </li>
           <li>
-            <Link href="/servercomp">ServerComp</Link>
+            <Link href="/datafetch/servercomp">Gender Checking</Link>
+          </li>
+          <li>
+            <Link href="/doctors">Doctors</Link>
           </li>
           <li>
             <Link href="/service">Service</Link>

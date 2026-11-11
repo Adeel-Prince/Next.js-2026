@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import style from "./service.module.css";
-import adeel from "@/public/adeel.png";
 import { easeInOut, motion } from "motion/react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -79,10 +78,10 @@ const Services = () => {
 
   return (
     <section className="font-roboto">
-      <h1 className={style.common_heading}>Hello Services</h1>
+      <h1 className={style.common_heading}></h1>
 
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-200">
           Our Team
         </h2>
 
@@ -125,6 +124,106 @@ const Services = () => {
               transition={{ ease: easeInOut, delay: 0.8 }}
             >
               <p className="text-sm text-gray-600 text-center mt-2">
+                Full-Stack Developer
+              </p>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 1 }}
+              className="text-xs text-gray-500 text-center mt-1"
+            >
+              Node.js & JavaScript
+            </motion.p>
+          </motion.div>
+
+          {/* <!-- Team Member 2 --> */}
+          <motion.div
+            variants={cardVariant}
+            initial="hidden"
+            animate="show"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="bg-white rounded-lg shadow-md p-6 "
+          >
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5, ease: easeInOut }}
+              className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <Image
+                src="/member2.webp"
+                width={500}
+                height={500}
+                alt="member2"
+                className="w-full h-full rounded-full"
+              />
+            </motion.div>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.6 }}
+              className="text-lg font-semibold text-center text-gray-800"
+            >
+              Olivia
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.8 }}
+            >
+              <p className="text-sm text-gray-600 text-center mt-2">
+                Project Manager
+              </p>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 1 }}
+              className="text-xs text-gray-500 text-center mt-1"
+            >
+              Agile & Scrum
+            </motion.p>
+          </motion.div>
+
+          {/* <!-- Team Member 3 --> */}
+          <motion.div
+            variants={cardVariant}
+            initial="hidden"
+            animate="show"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="bg-white rounded-lg shadow-md p-6 "
+          >
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5, ease: easeInOut }}
+              className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <Image
+                src="/member3.avif"
+                width={500}
+                height={500}
+                alt="member3"
+                className="w-full h-full rounded-full"
+              />
+            </motion.div>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.6 }}
+              className="text-lg font-semibold text-center text-gray-800"
+            >
+              Mike Johnson
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.8 }}
+            >
+              <p className="text-sm text-gray-600 text-center mt-2">
                 Backend Developer
               </p>
             </motion.div>
@@ -138,98 +237,155 @@ const Services = () => {
             </motion.p>
           </motion.div>
 
-          {/* <!-- Team Member 2 --> */}
-          <div className="bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-            <div className="w-full h-full relative bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <Image
-                src={adeel}
-                alt="adeelahmad"
-                fill={true}
-                quality={100}
-                priority={false}
-                placeholder="blur"
-                blurDataURL=""
-              />
-            </div>
-            {/* <h3 className="text-lg font-semibold text-center text-gray-800">
-              Mike Johnson
-            </h3>
-            <p className="text-sm text-gray-600 text-center mt-2">
-              Backend Developer
-            </p>
-            <p className="text-xs text-gray-500 text-center mt-1">
-              Node.js & Python
-            </p> */}
-          </div>
-
-          {/* <!-- Team Member 3 --> */}
-          <div
-            ref={cardRef}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+          {/* <!-- Team Member 4 --> */}
+          <motion.div
+            variants={cardVariant}
+            initial="hidden"
+            animate="show"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             className="bg-white rounded-lg shadow-md p-6 "
           >
-            <div className="w-24 h-24 bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-purple-600">MJ</span>
-            </div>
-            <h3 className="text-lg font-semibold text-center text-gray-800">
-              Mike Johnson
-            </h3>
-            <p className="text-sm text-gray-600 text-center mt-2">
-              Backend Developer
-            </p>
-            <p className="text-xs text-gray-500 text-center mt-1">
-              Node.js & Python
-            </p>
-          </div>
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5, ease: easeInOut }}
+              className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <Image
+                src="/member4.jpg"
+                width={500}
+                height={500}
+                alt="member4"
+                className="w-full h-full rounded-full"
+              />
+            </motion.div>
 
-          {/* <!-- Team Member 4 --> */}
-          <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-            <div className="w-24 h-24 bg-pink-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-pink-600">EW</span>
-            </div>
-            <h3 className="text-lg font-semibold text-center text-gray-800">
+            <motion.h3
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.6 }}
+              className="text-lg font-semibold text-center text-gray-800"
+            >
               Emily Wilson
-            </h3>
-            <p className="text-sm text-gray-600 text-center mt-2">
-              Product Manager
-            </p>
-            <p className="text-xs text-gray-500 text-center mt-1">
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.8 }}
+            >
+              <p className="text-sm text-gray-600 text-center mt-2">
+                Product Manager
+              </p>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 1 }}
+              className="text-xs text-gray-500 text-center mt-1"
+            >
               Strategy & Analytics
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* <!-- Team Member 5 --> */}
-          <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-            <div className="w-24 h-24 bg-orange-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-orange-600">DL</span>
-            </div>
-            <h3 className="text-lg font-semibold text-center text-gray-800">
+          <motion.div
+            variants={cardVariant}
+            initial="hidden"
+            animate="show"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="bg-white rounded-lg shadow-md p-6 "
+          >
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5, ease: easeInOut }}
+              className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <Image
+                src="/member6.jfif"
+                width={500}
+                height={500}
+                alt="member6"
+                className="w-full h-full rounded-full"
+              />
+            </motion.div>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.6 }}
+              className="text-lg font-semibold text-center text-gray-800"
+            >
               David Lee
-            </h3>
-            <p className="text-sm text-gray-600 text-center mt-2">
-              DevOps Engineer
-            </p>
-            <p className="text-xs text-gray-500 text-center mt-1">
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.8 }}
+            >
+              <p className="text-sm text-gray-600 text-center mt-2">
+                DevOps Engineer
+              </p>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 1 }}
+              className="text-xs text-gray-500 text-center mt-1"
+            >
               AWS & Docker
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* <!-- Team Member 6 --> */}
-          <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-            <div className="w-24 h-24 bg-teal-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-teal-600">AB</span>
-            </div>
-            <h3 className="text-lg font-semibold text-center text-gray-800">
+          <motion.div
+            variants={cardVariant}
+            initial="hidden"
+            animate="show"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="bg-white rounded-lg shadow-md p-6 "
+          >
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5, ease: easeInOut }}
+              className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <Image
+                src="/member5.jfif"
+                width={500}
+                height={500}
+                alt="member5"
+                className="w-full h-full rounded-full"
+              />
+            </motion.div>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.6 }}
+              className="text-lg font-semibold text-center text-gray-800"
+            >
               Anna Brown
-            </h3>
-            <p className="text-sm text-gray-600 text-center mt-2">
-              QA Engineer
-            </p>
-            <p className="text-xs text-gray-500 text-center mt-1">
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 0.8 }}
+            >
+              <p className="text-sm text-gray-600 text-center mt-2">
+                QA Engineer
+              </p>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: easeInOut, delay: 1 }}
+              className="text-xs text-gray-500 text-center mt-1"
+            >
               Testing & Automation
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </div>
     </section>
