@@ -39,3 +39,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# here add some more ignoring files:
+# 📦 Block dependency allocations
+node_modules/
+package-lock.json
+
+# 🛠️ Next.js Production Build Outputs & Local Compilation Caches
+.next/
+out/
+build/
+
+# 🔐 HIDE ALL ENVIRONMENT CREDENTIALS
+.env
+.env.local
+.env.production
+*.env
+*.local
+
+# IDE / System Clutter
+.vscode/
+.DS_Store
+Thumbs.db
+AGENTS.md
